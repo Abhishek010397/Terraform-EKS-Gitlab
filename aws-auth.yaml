@@ -1,0 +1,31 @@
+ap1Version: v1 
+data: 
+     mapRoles: |
+          - groups: 
+            - system:masters 
+           rolearn: arn:aws:iam::a/c-id:role/RoleName 
+           username: power-user-access 
+          - groups: 
+            - system: bootstrappers 
+            - system:nodes 
+            rolearn: arn:aws:iam::a/c-id:ro1e/RoleName 
+            username: systemmode:{{EC2PrivateDNSName}) 
+kind: ConfigMap 
+metadata: 
+      managedFields:
+      -     apiVersion: v1 
+            fieldsType: FieldsV1 
+            fieldsV1: 
+               f:data: {} 
+            manager: vpcLambda 
+            operation: Update 
+      -     apiVersion: v1 
+            fieldsType: Fieldsv1 
+            fieldsV1: 
+               f:data: 
+                  f:mapRoles: {}
+            manager: kubectl 
+            operation: Update 
+            name: aws-auth 
+            namespace: kube-system 
+            selftink: /api/vs/namespaces/kube-system/confignaps/aws-auth 
