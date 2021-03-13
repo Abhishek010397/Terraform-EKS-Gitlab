@@ -4,7 +4,7 @@ In this Project I have demonstrated the Provisioning of AWS Architecture using H
 
 Also I have mentioned the provisioning of  EKS architecture along with EFS,KMS and RDS in AWS private subnets using gitlab for automating the provisioning of Architecture by Terraform.
 
-Also i have made use of AWS Auth inorder to provide access of the cluster to other users. When we create a Cluster generally in Amazon EKS, the user or the IAM Entity who creates the cluster is granted administrative permissions in the cluster's RBAC configuration in the control plane i.e "system:masters" and thereby we can't find this in the Cluster's ConfigMap or any other visible configurations.To grant additional AWS users or roles the ability to interact with the  cluster, we must edit the aws-auth ConfigMap within Kubernetes. The aws-auth is initially created to allow our nodes to join our cluster, but we also use this ConfigMap to add RBAC access to IAM users and roles.
+Also I have made use of aws-auth inorder to provide access of the cluster to other users. When we create a Cluster generally in Amazon EKS, the user or the IAM Entity who creates the cluster is granted administrative permissions in the cluster's RBAC configuration in the control plane i.e "system:masters" and thereby we can't find this in the Cluster's ConfigMap or any other visible configurations.To grant additional AWS users or roles the ability to interact with the  cluster, we must edit the aws-auth ConfigMap within Kubernetes. The aws-auth is initially created to allow our nodes to join our cluster, but we also use this ConfigMap to add RBAC access to IAM users and roles.
 
 Gitlab is used because:-
      
