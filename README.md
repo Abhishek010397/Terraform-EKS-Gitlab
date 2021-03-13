@@ -6,11 +6,11 @@ Also I have mentioned the provisioning of  EKS architecture along with EFS,KMS a
 
 Gitlab is used because:-
      
-     1.ease of configuration;
-     2.source code security;
-     3.pipeline automation;
-     4.DevOps maturity feedback; and
-     5.deployment scheduling.
+     1.ease of configuration
+     2.source code security
+     3.pipeline automation
+     4.DevOps maturity feedback
+     5.deployment scheduling
 
 
 
