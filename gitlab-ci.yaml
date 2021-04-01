@@ -64,6 +64,12 @@ build-test-eks-connectivity:
          - kubectl delete svc nginx-test -n cp1408
          - kubectl delete pod nginx-test -n cp1408
          - kubectl delete ns cp1408
+         - >
+            if [ "$namespace" == "your-namespace" ]; then
+                kubectl get ns | grep $namespace
+            else
+                kubectl create ns $namespace
+            fi
 
 build-argocd-eks-cluster-add: 
      stage: ArgoCD-EKS-Cluster-Addition 
