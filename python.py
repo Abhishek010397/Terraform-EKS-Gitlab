@@ -12,7 +12,7 @@ def run_ecs_task():
     # INPUT -> { (unique)"TransactionID": "foo", "Type":"PURCHASE"}
     try:
         response = client.start_execution(
-            # 'arn:aws:states:us-east-1:680763698946:stateMachine:testECStask'
+            
             stateMachineArn=os.environ['step'],
             name=str(uuid.uuid1()),
             input='{\"Comment\" : \"insert your json here\"}',
@@ -24,7 +24,7 @@ def run_ecs_task():
 def fetch_transaction_id():
     try:
         http = urllib3.PoolManager()
-        # 'https://f57uxzqgv0.execute-api.us-east-1.amazonaws.com/test/myNewTransactionID'
+        
         uri = os.environ['uri']
         json_data = http.request('GET', uri).data
         print(json_data)
